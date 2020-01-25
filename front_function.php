@@ -46,7 +46,7 @@ if(isset($_POST['submit'])){
         		$_SESSION['SuperId'] = $last_id;
         		// echo "<script>window.open('panel/welcome.php?id='.$last_id,'_self');</script>";
                 check_for_rank($uname);
-                check_for_fund($uname);
+                check_for_fund($uname); 
         		// header("location:welcome.php");
         		// echo "<script>window.open('panel/index.php','_self');</script>";
         	}
