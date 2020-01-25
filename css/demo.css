@@ -1,0 +1,126 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	background-attachment: fixed;
+	background-position: 50% 50%;
+	background-size: cover;
+	
+}
+a {
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+}
+.bg-red {
+	background-image: url(bg-red.jpg);
+}
+.bg-orange {
+	background-image: url(../img/bg-orange.jpg);
+}
+.bg-yellow {
+	background-image: url(../img/bg-yellow.jpg);
+}
+.bg-green {
+	background-image: url(../img/bg-green.jpg);
+}
+.bg-cyan {
+	background-image: url(login1.jpg);
+	/*background-color:#29787D;*/
+	/*background-color:#FCA005;*/
+	/*background-color: #5cb85c;*/
+}
+.bg-blue {
+	background-image: url(../img/bg-blue.jpg);
+}
+.bg-purple {
+	background-image: url(../img/bg-purple.jpg);
+}
+.bg-pink {
+	background-image: url(../img/bg-pink.jpg);
+}
+.bg-black {
+	background-image: url(../img/bg-black.jpg);
+}
+.body {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 40px;
+}
+.body-s {
+	max-width: 400px;
+}
+@media screen and (max-width: 600px) {
+	.body {
+		padding: 20px;
+	}
+}
+
+        .dvHeader
+        {
+            height:100px; 
+            background-color:#FFFFFF; 
+            margin: 0;
+	        outline: none;
+	        box-shadow: 0 0 25px #095B91;
+	        font: 13px/1.55 'Open Sans', Helvetica, Arial, sans-serif;
+	        border-top:5px solid #095B91;
+        }
+        
+        .topheader
+        {
+            height:40px;
+            width:100%;
+            background-color:#5cb85c;   
+            color:#FFFFFF;
+            font-weight:bold;
+        }
+        
+        .logo{width:200px;float:left; margin-left:20px; margin-top:20px;}
+        .headerlink{float:right;}
+        ul.topnav {
+    list-style-type: none;
+    margin-top: 0px;
+    padding: 0;
+    overflow: hidden;
+    background-color:transparent;
+    
+    border-right:1px; solid #FFFFFF;
+}
+
+ul.topnav li {float: left; }
+
+ul.topnav li a {
+    display: block;
+    color: #2d3e50;
+    text-align: center;
+    padding: 40px 40px;
+    text-decoration: none;
+    text-transform:capitalize;
+    font-size:12px;
+    font-family: "montserratregular";
+    font-weight:bold;
+    
+}
+ul.topnav li a:hover {
+    background-color:#29787D;
+    
+}
+
+ul.topnav li a:hover:not(.active) {background-color:transparent;}
+
+ul.topnav li a.active {background-color: #29787D;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+    ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 40px;
+    text-decoration: none;
+}
+}
