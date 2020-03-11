@@ -1,3 +1,12 @@
+<?php 
+session_start();
+include '../connection.php';
+if (!isset($_SESSION['userid'])) 
+{
+    header("location:login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -16,6 +25,7 @@
     <!-- Custom CSS -->
     <link href="dist/css/style.min.css" rel="stylesheet">
     <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="assets/libs/toastr/build/toastr.min.css" rel="stylesheet">
 
 
 </head>
@@ -229,6 +239,16 @@
                                 <li class="sidebar-item"><a href="addProduct.php" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu"> Add Product </span></a></li>
                             </ul>
                         </li>
+                         
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-barcode"></i><span class="hide-menu">Barcode </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="barcode_list.php" class="sidebar-link"><i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Barcode List </span></a></li>
+                                <li class="sidebar-item"><a href="generate_barcode.php" class="sidebar-link"><i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Generate Barcode </span></a></li>
+                               
+                            </ul>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="sales.php" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Sales</span></a></li>
+                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="logout.php" aria-expanded="false"><i class="fa fa-power-off "></i><span class="hide-menu">Logout</span></a></li>
                         <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="purchaseProduct.php" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Purchase Product</span></a></li>
                          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="product_details.php" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Product Details</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stock.php" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Stock</span></a></li> -->

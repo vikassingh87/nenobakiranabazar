@@ -39,36 +39,53 @@
                                         <thead style="font-size: 11px;">
                                             <tr>
                                                 <th>Sr.</th>
+                                                <th>Barcode</th>
+                                                <th>Product Code</th>
                                                 <th>Product Name</th>
                                                 <th>MRP Price</th>
                                                 <th>NKB Price</th>
-                                                <th>Product Image</th>
                                                 <th>Quantity</th>
-                                                <th>Status</th>
+                                                <th>Product Image</th>
                                                 <th>Manufacturing Date</th>
                                                 <th>Expiry Date</th>
                                                 <th>In Stock</th>                                               
+                                                <th>Publish</th>
                                                 <th>Date</th>
                                                 <th>Action</th>
+                                                <th>Print Barcode</th>
                                             </tr>
                                         </thead>
                                         <tbody style="font-size: 11px;">
+                                            <?php
+                                            $sql = "SELECT * FROM product_details";
+                                            $query = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+                                            if(mysqli_num_rows($query) > 0){
+                                                $i = 1;
+                                                while($result = mysqli_fetch_assoc($query)){ extract($result);?>
                                             <tr>
-                                                <td>1</td>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                                <td>$320,800</td>
-                                                <td>$320,800</td>
-                                                <td>$320,800</td>                                                
-                                                <td>2011/04/25</td>
-                                                <td><a href="editProduct.php" class="btn btn-primary btn-xs">Edit</a></td>
+                                                <td><?=$i++;?></td>
+                                                <td></td>
+                                                <td><?=$product_code;?></td>
+                                                <td><?=$product_name;?></td>
+                                                <td><?=$product_price;?></td>
+                                                <td><?=$product_nkb_price;?></td>
+                                                <td><?=$product_quantity;?></td>
+                                                <td><?=!empty($product_image)?'<a href="../uploads/products/'.$product_image.'" target="_blank"><img src="../uploads/products/'.$product_image.'" height="50" width="50"></a>':'';?></td>
+                                                <td><?=!empty($product_manufacturing_date)?date('d-m-Y',strtotime($product_manufacturing_date)):'';?></td>
+                                                <td><?=!empty($product_expiry_date)?date('d-m-Y',strtotime($product_expiry_date)):'';?></td>
+                                                <td><?=($product_in_stock == 1)?'Yes':'No';?></td>
+                                                <td><?=($product_publish == 1)?'Yes':'No';?></td>                                                
+                                                <td><?=date('d-m-Y',strtotime($created_date));?></td>
+                                                <td>
+                                                    <a href="addProduct.php?id=<?=$id;?>" class="btn btn-primary btn-xs"><i class="fa fa-edit" aria-hidden="true"></i> Edit</a>
+                                                    <a href="javascript:void(0);" class="btn btn-danger btn-xs deleteProduct" data-id="<?=$id;?>"><i class="fa fa-trash"></i> Delete</a>
+                                                </td>
+                                                <td>
+                                                    <a href="javascript:void(0);" class="btn btn-info btn-xs"><i class="fa fa-print"></i> </a></td>
                                             </tr>
-                                          
-                                          
+                                                <?php } 
+                                            }
+                                            ?>
                                         </tbody>
                                     </table>
                                 </div>

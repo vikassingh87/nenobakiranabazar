@@ -1,0 +1,230 @@
+[
+    {
+        "name": "picqer/php-barcode-generator",
+        "version": "v0.3",
+        "version_normalized": "0.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/picqer/php-barcode-generator.git",
+            "reference": "2e4d5b1f7f04fdb348d0721ada65963dac6f0c0c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/picqer/php-barcode-generator/zipball/2e4d5b1f7f04fdb348d0721ada65963dac6f0c0c",
+            "reference": "2e4d5b1f7f04fdb348d0721ada65963dac6f0c0c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^5.3"
+        },
+        "time": "2019-01-12T09:29:34+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Picqer\\Barcode\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPLv3"
+        ],
+        "authors": [
+            {
+                "name": "Nicola Asuni",
+                "email": "info@tecnick.com",
+                "homepage": "http://nicolaasuni.tecnick.com"
+            },
+            {
+                "name": "Casper Bakker",
+                "email": "info@picqer.com"
+            }
+        ],
+        "description": "An easy to use, non-bloated, barcode generator in PHP. Creates SVG, PNG, JPG and HTML images from the most used 1D barcode standards.",
+        "homepage": "http://github.com/picqer/php-barcode-generator",
+        "keywords": [
+            "CODABAR",
+            "Code11",
+            "Code93",
+            "EAN13",
+            "KIX",
+            "KIXCODE",
+            "MSI",
+            "POSTNET",
+            "Pharma",
+            "Standard 2 of 5",
+            "barcode",
+            "barcode generator",
+            "code128",
+            "code39",
+            "ean",
+            "html",
+            "jpeg",
+            "jpg",
+            "php",
+            "png",
+            "svg",
+            "upc"
+        ]
+    },
+    {
+        "name": "tecnickcom/tc-lib-barcode",
+        "version": "1.15.20",
+        "version_normalized": "1.15.20.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/tecnickcom/tc-lib-barcode.git",
+            "reference": "dd8de5620ec436d61cc8535e11f2879146ebc16b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/tecnickcom/tc-lib-barcode/zipball/dd8de5620ec436d61cc8535e11f2879146ebc16b",
+            "reference": "dd8de5620ec436d61cc8535e11f2879146ebc16b",
+            "shasum": ""
+        },
+        "require": {
+            "ext-bcmath": "*",
+            "ext-date": "*",
+            "ext-gd": "*",
+            "ext-pcre": "*",
+            "php": ">=5.3",
+            "tecnickcom/tc-lib-color": "^1.12.15"
+        },
+        "require-dev": {
+            "apigen/apigen": "^2.8.1 || ^4.1.2",
+            "bartlett/php-compatinfo": "^4.5.2 || ^5.0.10 || ^5.0.12",
+            "pdepend/pdepend": "^2.5.2",
+            "phploc/phploc": "^2.1 || ^3.0 || ^4.0",
+            "phpmd/phpmd": "^2.6.0",
+            "phpunit/phpunit": "^4.8 || ^5.7 || ^6.5 || ^7.1",
+            "sebastian/phpcpd": "^2.0 || ^3.0 || ^4.0",
+            "squizlabs/php_codesniffer": "^2.8.0 || ^3.2.0"
+        },
+        "time": "2020-01-02T16:01:18+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Com\\Tecnick\\Barcode\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Nicola Asuni",
+                "email": "info@tecnick.com",
+                "role": "lead"
+            }
+        ],
+        "description": "PHP library to generate linear and bidimensional barcodes",
+        "homepage": "http://www.tecnick.com",
+        "keywords": [
+            "3 of 9",
+            "ANSI MH10.8M-1983",
+            "CBC",
+            "CODABAR",
+            "CODE 11",
+            "CODE 128 A B C",
+            "CODE 39",
+            "CODE 93",
+            "EAN 13",
+            "EAN 8",
+            "ECC200",
+            "Intelligent Mail Barcode",
+            "Interleaved 2 of 5",
+            "KIX",
+            "Klant",
+            "MSI",
+            "Onecode",
+            "PHARMACODE",
+            "PHARMACODE TWO-TRACKS",
+            "POSTNET",
+            "RMS4CC",
+            "Standard 2 of 5",
+            "UPC-A",
+            "UPC-E",
+            "USD-3",
+            "USPS-B-3200",
+            "USS-93",
+            "barcode",
+            "datamatrix",
+            "pdf417",
+            "planet",
+            "qr-code",
+            "royal mail",
+            "tc-lib-barcode",
+            "upc"
+        ]
+    },
+    {
+        "name": "tecnickcom/tc-lib-color",
+        "version": "1.12.15",
+        "version_normalized": "1.12.15.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/tecnickcom/tc-lib-color.git",
+            "reference": "2f4860cbac4d58c210b6bec4c5806906278962c1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/tecnickcom/tc-lib-color/zipball/2f4860cbac4d58c210b6bec4c5806906278962c1",
+            "reference": "2f4860cbac4d58c210b6bec4c5806906278962c1",
+            "shasum": ""
+        },
+        "require": {
+            "ext-pcre": "*",
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "apigen/apigen": "^2.8.1 || ^4.1.2",
+            "bartlett/php-compatinfo": "^4.5.2 || ^5.0.10 || ^5.0.12",
+            "pdepend/pdepend": "^2.5.2",
+            "phploc/phploc": "^2.1 || ^3.0 || ^4.0",
+            "phpmd/phpmd": "^2.6.0",
+            "phpunit/phpunit": "^4.8 || ^5.7 || ^6.5 || ^7.1",
+            "sebastian/phpcpd": "^2.0 || ^3.0 || ^4.0",
+            "squizlabs/php_codesniffer": "^2.8.0 || ^3.2.0"
+        },
+        "time": "2020-01-02T16:01:17+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Com\\Tecnick\\Color\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Nicola Asuni",
+                "email": "info@tecnick.com",
+                "role": "lead"
+            }
+        ],
+        "description": "PHP library to manipulate various color representations",
+        "homepage": "http://www.tecnick.com",
+        "keywords": [
+            "cmyk",
+            "color",
+            "colors",
+            "colour",
+            "colours",
+            "hsl",
+            "hsla",
+            "javascript",
+            "rgb",
+            "rgba",
+            "tc-lib-color",
+            "web"
+        ]
+    }
+]

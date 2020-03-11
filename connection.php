@@ -36,8 +36,8 @@ else{
     	"defaultccname"     =>  "Nenobakirana"
 	);
 }
-
-include('function.php');
+$product_code_prefix = 'NKB';
+include_once('C:/wamp64/www/nenobakirana/function.php');
 /*echo "<h1>Level Payout </h1>";
 calculate_level_payout('NKB459344');
 echo "<h1>Referral Bonus Payout </h1>";

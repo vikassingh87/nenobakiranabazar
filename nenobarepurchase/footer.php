@@ -42,23 +42,21 @@
     <script src="dist/js/pages/chart/chart-page-init.js"></script>
     <script src="assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="assets/extra-libs/DataTables/datatables.min.js"></script>
+    <!-- for popup msg -->
+    <script src="assets/libs/toastr/build/toastr.min.js"></script> 
+    <!-- end -->
+    <script type="text/javascript" src="../repurchase_script.js"></script>
     <script>
          jQuery('.mydatepicker').datepicker();
-        jQuery('#datepicker-autoclose').datepicker({
+        jQuery('#product_manufacturing_date,#product_expiry_date,#datepicker-autoclose,#datepicker-autoclose1').datepicker({
             autoclose: true,
             todayHighlight: true
-        });
-        jQuery('#datepicker-autoclose1').datepicker({
-            autoclose: true,
-            todayHighlight: true
-        });
-        var quill = new Quill('#editor', {
-            theme: 'snow'
         });
     </script>
-      <script>
+    <script>
         $('#zero_config').DataTable();
     </script>
+      
 
 </body>
 

@@ -304,7 +304,18 @@
          <i class="pull-left"><img src="images/total.png" width="60px" height="60px"></i>
          <div class="stats">
             <h5 style="font-size: 14px;"><strong >Repurchase wallet</strong></h5>
-            <h5 style="font-size: 13px;"><?php echo "00";?></h5>
+            <h5 style="font-size: 13px;"><?php echo $user_info['e_wallet'];?></h5>
+         </div>
+      </div>
+  </div>
+</div>
+<div class="col_3">
+   <div class="col-md-3 widget widget1">
+      <div class="r3_counter_box"  style="background-color:#114c93;">
+         <i class="pull-left"><img src="images/total.png" width="60px" height="60px"></i>
+         <div class="stats">
+            <h5 style="font-size: 14px;"><strong >Repurchase Payout</strong></h5>
+            <h5 style="font-size: 13px;"><?php echo $payout_info['repurchase_payout_amount'];?></h5>
          </div>
       </div>
   </div>
