@@ -77,7 +77,7 @@ $password=$res['password'];
     <tr>
         <td colspan="2" align="center">
             <span style="font-size: 13pt; font-weight:bold;">
-               :: Your Registration Details ::
+               ~:: Your Registration Details ::~
             </span>
         </td>
     </tr>
@@ -126,11 +126,7 @@ $password=$res['password'];
 </tr>
 
 <tr>
-<td align="center">
-
-    &nbsp;
-
-</td>
+<td align="center">&nbsp;</td>
 </tr>
 <tr>
 <td align="center">

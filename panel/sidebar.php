@@ -1,5 +1,5 @@
       <?php
-       include_once('../connection.php');
+       include('../connection.php');
      ?> 
     <style type="text/css">
         a.noclick       {
@@ -53,24 +53,12 @@
                             <a href="active.php"><i class="fa fa-user nav_icon"></i>Active Ids</a>
                            </li>
                         <li>
-                         <a href="acc.php"><i class="fa fa-bank nav_icon"></i>Fillup KYC Details<span class="fa arrow"></span></a></li>
-                        <!--   <li>
-                            <?php 
-                                 $day= date('d');
-                                if ($day=='11' || $day=='21' || $day>='01') 
-                                {
-                                    $href='withdral.php';
-                                }
-                                else
-                                {
-                                    $href="javascript:void(0);";
-                                }
-                             ?>
-                         <a href="<?php echo $href; ?>"><i class="fa fa-bank nav_icon"></i>Withdrawal <span class="fa arrow"></span></a></li> -->
+                         <a href="acc.php"><i class="fa fa-bank nav_icon"></i>Fillup KYC Details</a></li>
+                       
                           
                       
                               <li>
-                            <a href="#"><i class="fa fa-users"></i>Active Id Team<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-users nav_icon"></i>Active Id Team<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="self_team.php">Direct Team</a>
@@ -86,7 +74,7 @@
                             
                         </li>
                          <li>
-                            <a href="#"><i class="fa fa-users"></i>Registerd Id Team<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-users nav_icon"></i>Registerd Id Team<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="self_registerd.php">Direct Team</a>
@@ -111,9 +99,7 @@
                                 <li>
                                     <a href="view.php">View Pin</a>
                                 </li>
-                              <!--   <li>
-                                    <a href="#">Used Pin</a>
-                                </li> -->
+                             
                                  <li>
                                     <a href="getpin.php">E-Pin Request</a>
                                 </li>

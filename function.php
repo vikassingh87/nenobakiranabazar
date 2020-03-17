@@ -40,6 +40,7 @@ function calculate_level_payout($user_id,$level_count = null){
 	//echo "<br>sponsor_id : $sponsor_id ---> payout_amount : $payout_amount";
 	$sql = "SELECT * FROM payout WHERE user_id = '$sponsor_id'";
 	$query = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+	$payout_amount = extract_certian_percentage_for_e_wallet($sponsor_id,$payout_amount);
 	if(mysqli_num_rows($query) > 0){
 		$sql2 = "UPDATE payout SET level_payout_amount = level_payout_amount+'$payout_amount' WHERE user_id = '$sponsor_id'";
 	}
@@ -64,6 +65,7 @@ function calculate_referral_bonus_payout($user_id){
 		//echo "<br>sponsor_id : $sponsor_id -----> payout_amount : ".$referral_payout_amount;
 		$sql = "SELECT * FROM payout WHERE user_id = '$sponsor_id'";
 		$query = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+		$referral_payout_amount = extract_certian_percentage_for_e_wallet($sponsor_id,$referral_payout_amount);
 		if(mysqli_num_rows($query) > 0){
 			$sql2 = "UPDATE payout SET referral_payout_amount = referral_payout_amount+'$referral_payout_amount' WHERE user_id = '$sponsor_id'";
 		}
@@ -96,6 +98,8 @@ function calculate_direct_referral_bonus_payout($user_id){
 		//echo "<br>sponsor_id : $sponsor_id ----> payout_amount :".$direct_referral_payout_amount;
 		$sql = "SELECT * FROM payout WHERE user_id = '$sponsor_id'";
 		$query = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+
+		$direct_referral_payout_amount = extract_certian_percentage_for_e_wallet($sponsor_id,$direct_referral_payout_amount);
 		if(mysqli_num_rows($query) > 0){
 			$sql2 = "UPDATE payout SET direct_referral_payout_amount = direct_referral_payout_amount+'$direct_referral_payout_amount' WHERE user_id = '$sponsor_id'";
 		}
@@ -123,6 +127,7 @@ function calculate_performance_bonus_payout($user_id,$level_count = null){
 	//echo "<br>sponsor_id : $sponsor_id ----> payout_amount : ".$performance_payout_amount;
 	$sql = "SELECT * FROM payout WHERE user_id = '$sponsor_id'";
 	$query = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+	$performance_payout_amount = extract_certian_percentage_for_e_wallet($sponsor_id,$performance_payout_amount);
 	if(mysqli_num_rows($query) > 0){
 		$sql2 = "UPDATE payout SET performance_payout_amount = performance_payout_amount+'$performance_payout_amount' WHERE user_id = '$sponsor_id'";
 	}
@@ -162,7 +167,7 @@ function get_user_info_by_id($id){
 
 function get_payout_info($user_id){
 	global $conn;
-	$array = array('level_payout_amount' => '0','referral_payout_amount' => 0,'direct_referral_payout_amount' => 0,'performance_payout_amount' => 0);
+	$array = array('level_payout_amount' => '0','referral_payout_amount' => 0,'direct_referral_payout_amount' => 0,'performance_payout_amount' => 0,'repurchase_payout_amount' => 0);
 	$sql = "SELECT * FROM payout WHERE user_id = '$user_id'";
 	$query = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 	if(mysqli_num_rows($query)){
@@ -459,8 +464,148 @@ function get_current_fund_eligibility($user_id){
 		}
 	}
 	return $user_current_fund_elibility;
-
 }
 
+function extract_certian_percentage_for_e_wallet($user_id = NULL,$payout_amount = 0){
+	global $conn;
+	$percentage = 10;
+	$amount = ($payout_amount*$percentage)/100;
+	$payout_amount = $payout_amount-$amount;
+	if($user_id != NULL){
+		$sql = "UPDATE user SET e_wallet = e_wallet+'$amount' WHERE user_id = '$user_id'";
+		$query = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+	}
+	return $payout_amount;
+}
+
+
+function get_product_by_id($product_id = null){
+	global $conn;
+	$result = array();
+	if($product_id != NULL){
+		$sql = "SELECT * FROM product_details WHERE id = '$product_id'";
+		$query = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+		if(mysqli_num_rows($query) > 0){
+			$result = mysqli_fetch_assoc($query);
+		}
+	}
+	return $result;
+}
+
+function get_product_by_name($product_name = null){
+	global $conn;
+	$result = array();
+	if($product_name != NULL){
+		$product_name = strtolower($product_name);
+		$sql = "SELECT * FROM product_details WHERE lower(product_name) = '$product_name'";
+		$query = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+		if(mysqli_num_rows($query) > 0){
+			$result = mysqli_fetch_assoc($query);
+		}
+	}
+	return $result;
+}
+
+function get_last_product_code(){
+	global $conn;
+	$last_product_code = '0001';
+	$sql = "SELECT * FROM last_product_code WHERE id = '1'";
+ 	$query = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+	if(mysqli_num_rows($query) > 0){
+		$result = mysqli_fetch_assoc($query);
+		$last_product_code = $result['product_code'];
+		$last_product_code += 1;
+		$sql2 = "UPDATE last_product_code SET `product_code`= '$last_product_code' WHERE id ='1'";
+		$query2 = mysqli_query($conn,$sql2);
+
+		$sql3 = "SELECT * FROM last_product_code WHERE id = '1'";
+ 		$query3 = mysqli_query($conn,$sql3) or die(mysqli_error($conn));
+ 		$result3 = mysqli_fetch_assoc($query3);
+ 		$last_product_code = $result3['product_code'];
+
+	}
+	else{
+		$sql2 = "INSERT INTO last_product_code(`product_code`) VALUES('$last_product_code')";
+		$query2 = mysqli_query($conn,$sql2);
+	}
+	return $last_product_code;
+}
+
+
+function generate_barcode($bar_code = null){
+	require 'vendor/autoload.php';
+	if($bar_code == null){
+		$bar_code = rand(1000,99999);
+	}
+	// echo $bar_code;echo "<br>";
+	$generator = new Picqer\Barcode\BarcodeGeneratorHTML();
+	return $generator->getBarcode($bar_code, $generator::TYPE_CODABAR);
+}
+
+function calculate_repurchase_for_wallet($user_id,$amount,$bussiness_value,$level_count=null){
+	global $conn;
+	$repurchase_percetage_level_wise = array(
+											1	=> 4,
+											2	=> 2,
+											3	=> 2,
+											4	=> 1,
+											5	=> 1,
+											6	=> 1,
+											7	=> 0.5,
+											8	=> 0.5,
+											9	=> 0.5,
+											10	=> 0.5,
+										);
+
+	$user_info = get_user_info($user_id);
+	if(empty($user_id)){
+		return true;
+	}
+	$sponsor_id = $user_info['sponsor_id'];
+	if($sponsor_id == 'admin'){
+		return true;
+	}
+	if($level_count == null){
+		$level_count = 1;
+	}
+	$repurchase_percentage = $repurchase_percetage_level_wise[$level_count];
+	$repurchase_payout_amount = ($amount*$repurchase_percentage)/100;
+
+	$repurchase_payout_business_value = ($bussiness_value*$repurchase_percentage)/100;
+
+	//echo "<br>sponsor_id : $sponsor_id ---> payout_amount : $payout_amount";
+	$sql = "SELECT * FROM payout WHERE user_id = '$sponsor_id'";
+	$query = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+	if(mysqli_num_rows($query) > 0){
+		$sql2 = "UPDATE payout SET repurchase_payout_amount = repurchase_payout_amount+'$repurchase_payout_amount',repurchase_payout_amount_business_value = repurchase_payout_amount_business_value+'$repurchase_payout_business_value' WHERE user_id = '$sponsor_id'";
+	}
+	else{
+		$sql2 = "INSERT INTO payout(`user_id`,`repurchase_payout_amount`,`repurchase_payout_amount_business_value`) VALUES('$sponsor_id','$repurchase_payout_amount','$repurchase_payout_business_value')";
+	}
+	mysqli_query($conn,$sql2) or die(mysqli_error($conn));
+	if($level_count == 10){
+		return true;
+	}
+	
+	$level_count = $level_count+1;
+	calculate_repurchase_for_wallet($sponsor_id,$amount,$bussiness_value,$level_count);
+}
+
+
+
+function generateBarcode()
+{
+    global $conn;
+    $barcode=rand(100000000,999999999);
+    $sql=mysqli_query($conn,"SELECT * FROM product_details WHERE barcode='$barcode'") or die(mysqli_error($conn));
+    if(mysqli_affected_rows($conn))
+    {
+        generateBarcode();
+    }
+    else
+    {
+        return $barcode;
+    }
+}
 
 ?>

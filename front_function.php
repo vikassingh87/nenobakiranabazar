@@ -40,14 +40,16 @@ if(isset($_POST['submit'])){
         	$sql="INSERT INTO user (`sponsor_id`,`sponsor_name`,`user_name`,`email`,`mobile`,`password`,`user_id`,`date_joining`,`status`,`pancard`)VALUES('$sponsarid','$sponsarname','$username','$email','$mobile','$password','$uname','$ct','$status','$pancard')";
         	$result=mysqli_query($conn,$sql) or die(mysqli_error($conn));
         	if($result>0){
-        		update_my_team_count($uname);
-        		update_my_direct_team_count($uname);
+        	
         		$last_id = mysqli_insert_id($conn);
         		$_SESSION['SuperId'] = $last_id;
+        		
+        		update_my_team_count($uname);
+        		update_my_direct_team_count($uname);
+        // 		check_for_senior_sales_executive($uname);
+        // 		check_for_fund($uname);
         		// echo "<script>window.open('panel/welcome.php?id='.$last_id,'_self');</script>";
-                check_for_rank($uname);
-                check_for_fund($uname);
-        		// header("location:welcome.php");
+        		header("location:welcome.php");
         		// echo "<script>window.open('panel/index.php','_self');</script>";
         	}
         	else{

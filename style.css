@@ -1296,7 +1296,7 @@
   border-color: #333;
 }
 .contact-address ul {
-  border: 1px solid #ddd;
+  /*border: 1px solid #ddd;*/
 }
 .address-info {
   box-shadow: 1px 1px 6px rgba(86, 86, 90, 0.5);

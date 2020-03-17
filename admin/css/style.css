@@ -1078,9 +1078,9 @@ button.note-color-btn {
   overflow-y:auto !important;
 }
 .btn-primary{
-  background-color: #ef553a !important;
+  /*background-color: #ef553a !important;
   border-color: #ef553a !important;
-  color: #fff;
+  color: #fff;*/
 }
 .btn-primary:hover{
   background-color: #fff !important;

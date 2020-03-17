@@ -1316,7 +1316,7 @@ span.badge {
   line-height: inherit;
   color: #fff;
   position: absolute;
-  right:38px;
+  /*right:38px;*/
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1485,9 +1485,9 @@ div.checker input {
   border-bottom: 1px solid #ddd !important;
 }
 .badge-success, .bg-green, .bootstrap-switch-success, .btn-success {
-  border-color: #ef553a;
+  /*border-color: #ef553a;
   background: #ef553a;
-  padding:8.5px 12px;
+  padding:8.5px 12px;*/
 }
 .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open .dropdown-toggle.btn-success {
   color: #fff;

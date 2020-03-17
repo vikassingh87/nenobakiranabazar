@@ -1,21 +1,7 @@
-
-
-    <?php 
-    include('connection.php');
-    session_start();
-   if (isset($_GET['id'])) {
-       
-   
-       $id=$_GET['id'];
-        if($id!="")
-        {
-              //$delquery="delete from user_reg where id='$id'";
-             // $rec= mysqli_query($conn, $delquery);
-
-            }
-
-       }
-    ?>
+<?php 
+include('connection.php');
+session_start();   
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -98,65 +84,33 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                  <th>Password</th>
                                   <th>Package</th>
                                   <th>Date of Joining</th>
-                                  <th>Bank Details</th>
+                                  <th>KYC Details</th>
                                   <th>Operations</th>
-                                   <!-- <th>BinaryView id wise</th> -->
+                                  <th>Print</th>
                             </tr>
                             </thead>
                             <?php 
                            // $email="";
                             $i=1;
-                            $query = mysqli_query($conn,"select * from user where status='1' order by id desc");
-                            if(mysqli_num_rows($query)>0){
-                                while($row=mysqli_fetch_array($query)){
-                                $paymode = $row['payment_mode'];
+                            $query = mysqli_query($conn,"SELECT * FROM user WHERE status='1' and id!=1 order by id desc");
+                            
+                                while($row=mysqli_fetch_assoc($query))
+                                {
+                                  $paymode = $row['payment_mode'];
                                   if($paymode=='2')
                                   {
-
-
-                              
-                                ?>
-                                    <tr style="background-color:red">
-                                        <td><?php echo $i; ?> </td>
-                                        <td><?php echo $row['user_id']; ?></td>
-                                        <td><?php echo $row['user_name']; ?></td>
-                                        <td><?php echo $row['sponsor_id']; ?></td>
-                                        <td><?php echo $row['email']; ?></td>
-                                        <td><?php echo $row['mobile']; ?></td>
-                                        <td><?php echo $row['password']; ?></td>
-                                        <td><?php echo $row['package']; ?></td>
-                                        <td><?php echo $row['date_joining']; ?></td>
-                                        <td><a href="acc_view.php?user_id=<?php echo $row['uname']; ?>">View</a></td>
-                                        <td><a href="edit.php?id=<?php echo $row['id']; ?>">Edit/Block Id</a></td> 
-                                       <!--  <td><a href="tree.php?user_id=<?php echo $row['uname']; ?>">Search</a></td> -->
-                                    </tr>
-                                  <?php }
-                                   elseif($paymode=='1')
+                                    $color='red';
+                                  }
+                                  elseif($paymode=='1')
                                   {
-
-                                ?>
-                                    <tr style="background-color:#fc9006">
-                                        <td><?php echo $i; ?> </td>
-                                        <td><?php echo $row['user_id']; ?></td>
-                                        <td><?php echo $row['user_name']; ?></td>
-                                        <td><?php echo $row['sponsor_id']; ?></td>
-                                        <td><?php echo $row['email']; ?></td>
-                                        <td><?php echo $row['mobile']; ?></td>
-                                        <td><?php echo $row['password']; ?></td>
-                                        <td><?php echo $row['package']; ?></td>
-                                        <td><?php echo $row['date_joining']; ?></td>
-                                        <td><a href="acc_view.php?user_id=<?php echo $row['uname']; ?>">View</a></td>
-                                        <td><a href="edit.php?id=<?php echo $row['id']; ?>">Edit/Block Id</a></td> 
-                                       <!--  <td><a href="tree.php?user_id=<?php echo $row['uname']; ?>">Search</a></td> -->
-                                    </tr>
-                                    <?php 
+                                    $color='#fc9006';
                                   }
                                   else
                                   {
-
-                                  
-                                  ?>
-                                   <tr >
+                                    $color='';
+                                  }
+                                ?>
+                                    <tr style="background-color:<?php echo $color; ?>">
                                         <td><?php echo $i; ?> </td>
                                         <td><?php echo $row['user_id']; ?></td>
                                         <td><?php echo $row['user_name']; ?></td>
@@ -166,20 +120,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                         <td><?php echo $row['password']; ?></td>
                                         <td><?php echo $row['package']; ?></td>
                                         <td><?php echo $row['date_joining']; ?></td>
-                                        <td><a href="acc_view.php?user_id=<?php echo $row['user_id']; ?>" >View</a></td>
-                                        <td><a href="edit.php?id=<?php echo $row['id']; ?>">Edit/Block Id</a></td> 
-                                        <!-- <td><a href="tree.php?user_id=<?php echo $row['user_id']; ?>">Search</a></td> -->
+                                        <td><a href="acc_view.php?user_id=<?php echo $row['user_id']; ?>" class="btn btn-primary btn-xs">View</a></td>
+                                        <td><a href="edit.php?id=<?php echo $row['id']; ?>" class='btn btn-danger btn-xs'>Edit/Block Id</a></td>
+                                        <td><a href="" onclick="Javascript:var PopUpWin = window.open(&#39;welcome_letter.php?user_id=<?php echo $row['user_id']; ?>&#39;,&#39;_blank&#39;,&#39;width=1000,height=680,title=yes,toolbar=no,location=no,resizable=no,status=no&#39;);return false;" class="btn btn-primary btn-xs">Welcome Letter</a>
+
+                                          <!-- <a href="" onclick="Javascript:var PopUpWin = window.open(&#39;idcard.php?user_id=<?php echo $row['user_id']; ?>&#39;,&#39;_blank&#39;,&#39;width=1000,height=680,title=yes,toolbar=no,location=no,resizable=no,status=no&#39;);return false;" class="btn btn-danger btn-xs">Id card</a> -->
+
+                                        </td>
                                     </tr>
-                                <?php
-                                    }$i++;
-                                }
-                            }
-                            else{
-                            ?>
+                                  
+                                  
+                                <?php $i++; } ?>
                                 
-                            <?php
-                            }
-                            ?>
+                            
                         </table>
                 </div>
 			

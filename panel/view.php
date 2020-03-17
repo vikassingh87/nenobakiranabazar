@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-require_once('../connection.php');
+require('../connection.php');
 //include('php-includes/check-login.php');
 //$userid = $_SESSION['userid'];
 ?>

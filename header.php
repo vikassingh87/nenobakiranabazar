@@ -2,6 +2,7 @@
 <html class="no-js" lang="zxx">
 
 <head>
+<script data-ad-client="ca-pub-6472505613405290" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Nenoba Kirana Bazar</title>
@@ -65,7 +66,7 @@
                         </div>
                         <div class="col-sm-4">
                             <div class="header-top header-top-right">
-                               <a href="#" class="prl-20 text-uppercase">NenobaKiranaBazar@gmail.com</a>
+                               <a href="#" class="prl-20 ">nenobakiranabazar@gmail.com</a>
                             </div>
                         </div>
                     </div>
