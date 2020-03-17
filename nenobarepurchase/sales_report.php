@@ -82,7 +82,7 @@
             autoclose: true,
             todayHighlight: true
         });
-
+        // date filter
         $('#from_date,#to_date').datepicker().on('changeDate', function(e) {
             get_sale_report();
         });
@@ -90,5 +90,4 @@
         get_sale_report();
     })
     // added by sandep
-    // added by vikas
 </script>
