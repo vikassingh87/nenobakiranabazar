@@ -89,4 +89,5 @@
     $(function(){
         get_sale_report();
     })
+    // added by sandep
 </script>
