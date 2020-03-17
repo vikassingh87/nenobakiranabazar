@@ -271,4 +271,19 @@
       </center>
       <center><button id="btnPrint" class="hidden-print btn btn-success">Print</button></center>
    </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+<script>
+   const $btnPrint = document.querySelector("#btnPrint");
+   
+   $btnPrint.addEventListener("click", () => {
+   
+   window.print();
+   
+   });
+   
+        
+</script>
+>>>>>>> dev

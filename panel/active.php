@@ -26,12 +26,7 @@ if(isset($_POST['active']))
     }
 	$stock=mysqli_query($conn,"SELECT * FROM user WHERE user_id='$uname'") or die(mysqli_error($conn));
 	
-// 	if (mysqli_num_rows($stock)) 
-// 	{
-// 	     echo '<script>alert("Invalid Userid");window.open("view.php","_self");</script>';
-// 	}
-// 	else
-// 	{
+
     	$result=mysqli_fetch_assoc($stock);
     	$mobile=$result['mobile'];
     	$status=$result['status'];
@@ -60,6 +55,8 @@ if(isset($_POST['active']))
     calculate_referral_bonus_payout($uname);
     calculate_direct_referral_bonus_payout($uname);
     calculate_performance_bonus_payout($uname);
+    check_for_senior_sales_executive($uname);
+    check_for_fund($uname);
     echo '<script>alert("Activation Successfully");window.open("index.php","_self");</script>';
     }
             else
@@ -68,7 +65,7 @@ if(isset($_POST['active']))
             }
         }
             ///....endpin....//
-//	}
+
 	
 }
 ?>

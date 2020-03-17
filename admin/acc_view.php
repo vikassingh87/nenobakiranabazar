@@ -4,27 +4,7 @@
     include('connection.php');
     $myid=  $_SESSION["userid"];
       
-  
-    //$id=$_GET['uname'];
 
- //  echo  $_SESSION['uname'];
-
-    if(isset($_SESSION['SuperId']))
-    {
-        $sql="select * from user where id='".$_SESSION['SuperId']."'";
-        $res= mysqli_query($conn, $sql);
-        $rec=mysqli_fetch_array($res);
-    }
-    else if(isset($_SESSION["userid"])){
-       $sql="select * from user where user_id='$myid'"; 
-         $res1= mysqli_query($conn, $sql);
-    $rec1=mysqli_fetch_array($res1);
-    }
-    else{
-        //echo '<script>window.location.href="index.php";</script>';
-    }
-    
-                // echo" hi,".$rec['uname']." ";
     ?>
 <!DOCTYPE HTML>
 <html>
@@ -80,14 +60,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
            <!--  <h2>Basic Implementation</h2> -->
         <table class="table table-bordered table-striped" >
           <tr style="background-color: #00b6c8;  border: 1px solid black;">
-            <th>Name</th>
-            <th>A/C No</th>
-            <th>Ifsc Code</th>
-            <th>Bank</th>
+            <th>Sr</th>
+            
+            <th>Account Holder Name</th>
+            <th>Account Number</th>
+            <th>Bank Name</th>
             <th>Branch</th>
-            <th>Pan No</th>
-            <th>Mobile</th>
-            <th>Action</th>
+            <th>IFSC</th>
+            <th>Mobile No.</th>
+            <th>Pan Card No.</th>
+            <th>Aadhaar Card No.</th>
+            <th>Nominee Name</th>
+            <th>Nominee Relation</th>
+            <th>Nominee Age</th>
+            <th>Status</th>
+            <th>Action</th> 
             
             <?Php
                 $i=1;
@@ -97,22 +84,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                    if([$query] > 0)
                    {
                     
-while($rec=mysqli_fetch_array($query))
+while($row=mysqli_fetch_array($query))
 {
 ?>
 
         </tr>
         <tr>
           
-          <td><?php echo $rec['name']; ?></td>
-          <td><?php echo $rec['ac_no'];?></td>
-          <td><?php echo $rec['ifsc'];?></td>
-          <td><?php echo $rec['bank'];?>
-          <td><?php echo $rec['branch'];?></td>
-          <td><?php echo $rec['pan_no'];?></td>
-        
-          <td><?php echo $rec['mobile'];?></td>
-          <td><a href="account_update.php?id=<?php echo $rec['id'];?>">Edit</a></td>
+          <td><?php echo $i; ?></td>
+          
+          <td><?php echo $row['name']; ?></td>
+          <td><?php echo $row['ac_no']; ?></td>
+          <td><?php echo $row['bank']; ?></td>
+          <td><?php echo $row['branch']; ?></td>
+          <td><?php echo $row['ifsc']; ?></td>
+          <td><?php echo $row['mobile']; ?></td>
+          <td><?php echo $row['pan_no']; ?></td>
+          <td><?php echo $row['adhar_no']; ?></td>
+          <td><?php echo $row['nominee_name']; ?></td>
+          <td><?php echo $row['nominee_relation']; ?></td>
+          <td><?php echo $row['nominee_age']; ?></td>
+          <td><?php $kyc_status=$row['status'];  if($kyc_status==0){echo "Pending";}elseif($kyc_status==1){echo "Approved";}elseif($kyc_status==2){echo "Rejected";};?></td>
+          <td><a href="account_update.php?id=<?php echo $row['id'];?>" class='btn btn-danger btn-xs'>Edit</a></td>
           </tr>
           
             </tr>     

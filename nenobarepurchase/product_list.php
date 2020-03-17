@@ -40,7 +40,11 @@
                                             <tr>
                                                 <th>Sr.</th>
                                                 <th>Barcode</th>
+<<<<<<< HEAD
                                                 <th>Product Code</th>
+=======
+                                                
+>>>>>>> dev
                                                 <th>Product Name</th>
                                                 <th>MRP Price</th>
                                                 <th>NKB Price</th>
@@ -50,6 +54,10 @@
                                                 <th>Expiry Date</th>
                                                 <th>In Stock</th>                                               
                                                 <th>Publish</th>
+<<<<<<< HEAD
+=======
+                                                <th>Product Code</th>
+>>>>>>> dev
                                                 <th>Date</th>
                                                 <th>Action</th>
                                                 <th>Print Barcode</th>
@@ -64,7 +72,11 @@
                                                 while($result = mysqli_fetch_assoc($query)){ extract($result);?>
                                             <tr>
                                                 <td><?=$i++;?></td>
+<<<<<<< HEAD
                                                 <td></td>
+=======
+                                                
+>>>>>>> dev
                                                 <td><?=$product_code;?></td>
                                                 <td><?=$product_name;?></td>
                                                 <td><?=$product_price;?></td>
@@ -74,7 +86,15 @@
                                                 <td><?=!empty($product_manufacturing_date)?date('d-m-Y',strtotime($product_manufacturing_date)):'';?></td>
                                                 <td><?=!empty($product_expiry_date)?date('d-m-Y',strtotime($product_expiry_date)):'';?></td>
                                                 <td><?=($product_in_stock == 1)?'Yes':'No';?></td>
+<<<<<<< HEAD
                                                 <td><?=($product_publish == 1)?'Yes':'No';?></td>                                                
+=======
+                                                <td><?=($product_publish == 1)?'Yes':'No';?></td>      
+                                                <td><?= $barcode.'<br>'; 
+                                                   echo $barcode_img= '<img class="barcode" alt="'. $barcode.'" src="barcode.php?text='. $barcode.'&codetype=code128&orientation=horizontal&size=20&print=true"/>'; ?>                                                  
+                                                    
+                                                </td>
+>>>>>>> dev
                                                 <td><?=date('d-m-Y',strtotime($created_date));?></td>
                                                 <td>
                                                     <a href="addProduct.php?id=<?=$id;?>" class="btn btn-primary btn-xs"><i class="fa fa-edit" aria-hidden="true"></i> Edit</a>

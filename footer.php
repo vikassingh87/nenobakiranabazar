@@ -43,7 +43,7 @@
                                     </li>
                                     <li class="mb-30 pl-45">
                                         <i class="zmdi zmdi-email"></i>
-                                        <p>NenobaKiranaBazar@gmail.com</p>
+                                        <p>nenobakiranabazar@gmail.com</p>
                                     </li>
                                     <li class="pl-45">
                                         <i class="zmdi zmdi-phone"></i>

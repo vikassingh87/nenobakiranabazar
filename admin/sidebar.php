@@ -40,6 +40,9 @@
                            <li>
                             <a href="nonpayment_id.php"><i class="fa fa-wrench nav_icon"></i>Nonpayment Id's</a>
                           </li>
+                          <li>
+                            <a href="kyc_approve.php"><i class="fa fa-credit-card nav_icon"></i>KYC Approve / Reject</a>
+                          </li>
                          <li>
                             <a href="view-pin-request.php"><i class="fa fa-sitemap nav_icon"></i>View Pin Request</a>
                           </li>

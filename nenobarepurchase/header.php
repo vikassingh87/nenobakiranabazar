@@ -5,8 +5,15 @@ if (!isset($_SESSION['userid']))
 {
     header("location:login.php");
 }
+<<<<<<< HEAD
 ?>
 
+=======
+$type=$_SESSION['type'];
+?>
+
+
+>>>>>>> dev
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
 
@@ -233,6 +240,12 @@ if (!isset($_SESSION['userid']))
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.php" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+<<<<<<< HEAD
+=======
+                        <?php 
+                        if($type=='admin'){
+                        ?>
+>>>>>>> dev
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Product </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
                                 <li class="sidebar-item"><a href="product_list.php" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Product List </span></a></li>
@@ -248,6 +261,19 @@ if (!isset($_SESSION['userid']))
                             </ul>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="sales.php" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Sales</span></a></li>
+<<<<<<< HEAD
+=======
+                    <?php } else{ ?>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="sales.php" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Sales</span></a></li>
+                    <?php } ?>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="fas fa-barcode"></i><span class="hide-menu">Report </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="sales_report.php" class="sidebar-link"><i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Sales Report </span></a></li>
+                                <li class="sidebar-item"><a href="stock_report.php" class="sidebar-link"><i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Stock Report </span></a></li>
+                                <li class="sidebar-item"><a href="expired_product.php" class="sidebar-link"><i class="mdi mdi-alert-octagon"></i><span class="hide-menu"> Expired Products </span></a></li>
+                            </ul>
+                        </li>
+>>>>>>> dev
                          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="logout.php" aria-expanded="false"><i class="fa fa-power-off "></i><span class="hide-menu">Logout</span></a></li>
                         <!-- <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="purchaseProduct.php" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Purchase Product</span></a></li>
                          <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="product_details.php" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Product Details</span></a></li>

@@ -47,6 +47,7 @@
     <!-- end -->
     <script type="text/javascript" src="../repurchase_script.js"></script>
     <script>
+<<<<<<< HEAD
          jQuery('.mydatepicker').datepicker();
         jQuery('#product_manufacturing_date,#product_expiry_date,#datepicker-autoclose,#datepicker-autoclose1').datepicker({
             autoclose: true,
@@ -56,6 +57,12 @@
     <script>
         $('#zero_config').DataTable();
     </script>
+=======
+        
+    </script>
+
+    <script type="text/javascript" src="../report_script.js"></script>
+>>>>>>> dev
       
 
 </body>

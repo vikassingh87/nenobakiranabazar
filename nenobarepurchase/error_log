@@ -1,2 +1,38 @@
 [18-Feb-2020 18:56:52 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/kzclez7i7y6r/public_html/nenobakiranabazar.com/nenobarepurchase/connection.php on line 6
 [18-Feb-2020 18:57:56 UTC] PHP Warning:  mysqli_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/kzclez7i7y6r/public_html/nenobakiranabazar.com/nenobarepurchase/connection.php on line 6
+<<<<<<< HEAD
+=======
+[05-Mar-2020 15:08:16 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/kzclez7i7y6r/public_html/nenoba_demo/function.php on line 535
+[05-Mar-2020 15:08:16 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/kzclez7i7y6r/public_html/nenoba_demo/function.php on line 535
+[05-Mar-2020 15:29:16 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/kzclez7i7y6r/public_html/nenoba_demo/function.php on line 535
+[05-Mar-2020 15:29:16 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/kzclez7i7y6r/public_html/nenoba_demo/function.php on line 535
+[05-Mar-2020 23:54:57 Asia/Calcutta] PHP Notice:  Undefined index: trans_id in /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/invoice.php on line 10
+[05-Mar-2020 23:55:35 Asia/Calcutta] PHP Notice:  Undefined index: trans_id in /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/invoice.php on line 10
+[05-Mar-2020 23:56:11 Asia/Calcutta] PHP Notice:  Undefined index: trans_id in /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/invoice.php on line 10
+[07-Mar-2020 14:32:55 UTC] PHP Warning:  mysqli_connect(): (HY000/2002): Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2) in /home/kzclez7i7y6r/public_html/nenoba_demo/connection.php on line 6
+[08-Mar-2020 00:35:56 Asia/Calcutta] PHP Notice:  Undefined index: trans_id in /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/invoice.php on line 10
+[07-Mar-2020 19:41:15 UTC] PHP Fatal error:  Cannot redeclare generateBarcode() (previously declared in /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/function.php:5) in /home/kzclez7i7y6r/public_html/nenoba_demo/function.php on line 604
+[07-Mar-2020 19:41:44 UTC] PHP Fatal error:  Cannot redeclare generateBarcode() (previously declared in /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/function.php:5) in /home/kzclez7i7y6r/public_html/nenoba_demo/function.php on line 604
+[07-Mar-2020 19:47:36 UTC] PHP Notice:  Undefined variable: bar_code in /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/product_list.php on line 68
+[07-Mar-2020 19:47:36 UTC] PHP Notice:  Undefined variable: bar_code in /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/product_list.php on line 68
+[07-Mar-2020 19:47:36 UTC] PHP Notice:  Undefined variable: bar_code in /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/product_list.php on line 68
+[07-Mar-2020 19:47:36 UTC] PHP Notice:  Undefined variable: bar_code in /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/product_list.php on line 68
+[07-Mar-2020 19:47:36 UTC] PHP Notice:  Undefined variable: bar_code in /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/product_list.php on line 68
+[07-Mar-2020 19:58:05 UTC] PHP Fatal error:  Uncaught Picqer\Barcode\Exceptions\InvalidCharacterException: Char S is unsupported in /home/kzclez7i7y6r/public_html/nenoba_demo/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php:2029
+Stack trace:
+#0 /home/kzclez7i7y6r/public_html/nenoba_demo/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php(188): Picqer\Barcode\BarcodeGenerator->barcode_codabar('ASAZNCT013952A')
+#1 /home/kzclez7i7y6r/public_html/nenoba_demo/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorHTML.php(21): Picqer\Barcode\BarcodeGenerator->getBarcodeData('SAZNCT013952', 'CODABAR')
+#2 /home/kzclez7i7y6r/public_html/nenoba_demo/function.php(542): Picqer\Barcode\BarcodeGeneratorHTML->getBarcode('SAZNCT013952', 'CODABAR')
+#3 /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/product_list.php(80): generate_barcode('SAZNCT013952')
+#4 {main}
+  thrown in /home/kzclez7i7y6r/public_html/nenoba_demo/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php on line 2029
+[07-Mar-2020 19:58:15 UTC] PHP Fatal error:  Uncaught Picqer\Barcode\Exceptions\InvalidCharacterException: Char S is unsupported in /home/kzclez7i7y6r/public_html/nenoba_demo/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php:2029
+Stack trace:
+#0 /home/kzclez7i7y6r/public_html/nenoba_demo/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php(188): Picqer\Barcode\BarcodeGenerator->barcode_codabar('ASAZNCT013952A')
+#1 /home/kzclez7i7y6r/public_html/nenoba_demo/vendor/picqer/php-barcode-generator/src/BarcodeGeneratorHTML.php(21): Picqer\Barcode\BarcodeGenerator->getBarcodeData('SAZNCT013952', 'CODABAR')
+#2 /home/kzclez7i7y6r/public_html/nenoba_demo/function.php(542): Picqer\Barcode\BarcodeGeneratorHTML->getBarcode('SAZNCT013952', 'CODABAR')
+#3 /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/product_list.php(80): generate_barcode('SAZNCT013952')
+#4 {main}
+  thrown in /home/kzclez7i7y6r/public_html/nenoba_demo/vendor/picqer/php-barcode-generator/src/BarcodeGenerator.php on line 2029
+[11-Mar-2020 00:17:59 Asia/Calcutta] PHP Notice:  Undefined index: trans_id in /home/kzclez7i7y6r/public_html/nenoba_demo/nenobarepurchase/invoice.php on line 10
+>>>>>>> dev

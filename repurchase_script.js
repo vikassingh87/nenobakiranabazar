@@ -62,7 +62,12 @@ var amount_to_paid;
 var repurchase_wallet_balance = 0;
 var actual_grand_total = 0;
 var user_id_valid = false;
+<<<<<<< HEAD
 $('#addProductByBarCode').blur(function(){
+=======
+$('#addProductByBarCode').keypress(function(e){
+    if(e.which==13){
+>>>>>>> dev
 	var product_quantity = 0;
 	var bar_code = $(this).val();
 	for(var i = 0;i < cart_data.length;i++){
@@ -89,7 +94,11 @@ $('#addProductByBarCode').blur(function(){
 			var res = JSON.parse(result);
 			$('html, body').css("cursor", "default");
 			$('#addProductByBarCode').val('');
+<<<<<<< HEAD
 			if(res.success == true){
+=======
+			if(res.success === true){
+>>>>>>> dev
 				console.log('%c Ajax Success, server'+"'"+'s message : '+res.message+' ','background:green;color:white;');
 				add_product_to_cart(res.product_info);
 			}
@@ -101,6 +110,10 @@ $('#addProductByBarCode').blur(function(){
 			}
 		}
 	})
+<<<<<<< HEAD
+=======
+    }
+>>>>>>> dev
 })
 
 
@@ -282,3 +295,8 @@ $('#users_total_wallet_balance_used').keyup(function(){
 	repurchase_wallet_balance = parseFloat($(this).val());
 	calculate_amount_to_be_paid();
 })
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> dev
