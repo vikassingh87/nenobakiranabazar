@@ -10,19 +10,23 @@ var expired_report_table =  $('#expired_report').DataTable();
 
 
 function get_sale_report(){
+	var from_date = $('#from_date').val();
+	var to_date = $('#to_date').val();
 	$.ajax({
 		url : '../report_funciton.php',
 		type : 'post',
 		beforeSend : function(){ sales_report_table.clear().draw();},
 		data : {
+			from_date : from_date,
+			to_date : to_date,
 			type : 'get_sale_report',
 		},
 		success : function(result){
 			var res = JSON.parse(result);
-			console.log(res);
+			// console.log(res);
 			for(var i = 0; i< res.result.length; i++){
 				var row_value = res.result[i];
-				console.log(row_value.user_id);
+				//console.log(row_value.user_id);
 				sales_report_table.row.add([
 					i+1,
 					row_value.user_id,
@@ -68,7 +72,7 @@ function get_stock_report(){
 		success : function(result){
 			var res = JSON.parse(result);
 
-			console.log(result);
+			//console.log(result);
 			for(var i = 0; i< res.result.length; i++){
 				var row_value = res.result[i];
 				
@@ -99,7 +103,7 @@ function get_expired_report(){
 		success : function(result){
 			var res = JSON.parse(result);
 
-			console.log(result);
+			//console.log(result);
 			for(var i = 0; i< res.result.length; i++){
 				var row_value = res.result[i];
 				

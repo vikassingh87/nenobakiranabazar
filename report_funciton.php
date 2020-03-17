@@ -3,7 +3,16 @@ require_once 'connection.php';
 
 if(isset($_POST['type']) && $_POST['type'] == 'get_sale_report'){
 	$result = array();
-	$sql = "SELECT id,
+	$from_date = $_POST['from_date'];
+	$to_date = $_POST['to_date'];
+	$where_sql = '';
+	if(!empty($from_date) && !empty($to_date)){
+		$from_date = date('Y-m-d',strtotime($from_date));
+		$to_date = date('Y-m-d',strtotime($to_date));
+		$where_sql .= " AND created_date >= DATE($from_date) AND created_date <= DATE($to_date)";
+	}
+
+	echo $sql = "SELECT id,
 					user_id,
 					customer_name,
 					customer_mobile_number,
@@ -11,7 +20,8 @@ if(isset($_POST['type']) && $_POST['type'] == 'get_sale_report'){
 					total_amount_to_be_paid as total_amount_paid,
 					total_amount,
 					created_date as date 
-					FROM order_purchase";
+					FROM order_purchase
+					WHERE transaction_status = '1' $where_sql ORDER BY created_date DESC";
 	$query = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 	while($row = mysqli_fetch_assoc($query)){
 		if(empty($row['user_id'])){

@@ -47,16 +47,7 @@
     <!-- end -->
     <script type="text/javascript" src="../repurchase_script.js"></script>
     <script>
-         jQuery('.mydatepicker').datepicker();
-        jQuery('#product_manufacturing_date,#product_expiry_date,#datepicker-autoclose,#datepicker-autoclose1,#from_date,#to_date').datepicker({
-            format: 'dd-mm-yyyy',
-            autoclose: true,
-            todayHighlight: true
-        });
-
-        $('#from_date').datepicker().on('changeDate', function(e) {
-            console.log('Hello');
-        });
+        
     </script>
 
     <script type="text/javascript" src="../report_script.js"></script>

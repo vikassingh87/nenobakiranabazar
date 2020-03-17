@@ -76,6 +76,16 @@
     </div>
 <?php include 'footer.php'; ?>
 <script type="text/javascript">
+    jQuery('.mydatepicker').datepicker();
+        jQuery('#product_manufacturing_date,#product_expiry_date,#datepicker-autoclose,#datepicker-autoclose1,#from_date,#to_date').datepicker({
+            format: 'dd-mm-yyyy',
+            autoclose: true,
+            todayHighlight: true
+        });
+
+        $('#from_date,#to_date').datepicker().on('changeDate', function(e) {
+            get_sale_report();
+        });
     $(function(){
         get_sale_report();
     })
